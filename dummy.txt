@@ -1,0 +1,9 @@
+<div id="headerID"></div>
+
+<div id="footerID"></div>
+
+<script>
+    $("#headerID").load("header.html");
+
+    $("#footerID").load("footer.html");
+</script>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>JF4U TUTORIAL</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta
+    content="Java tutorial - Hibernate tutorial - Spring boot tutorial - Microservices tutorial - Jsp Servlet tutorial"
+    name="keywords" />
+  <meta
+    content="Java tutorial - Hibernate tutorial - Spring boot tutorial - Microservices tutorial - Jsp Servlet tutorial"
+    name="description" />
+
+  <!-- Favicon -->
+  <link href="img/favicon.ico" rel="icon" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet" />
+
+  <!-- CSS Libraries -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
+  <link href="lib/slick/slick.css" rel="stylesheet" />
+  <link href="lib/slick/slick-theme.css" rel="stylesheet" />
+
+  <!-- Template Stylesheet -->
+  <link href="css/style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/post.css" />
+</head>
+
+<body>
+  <!-- Top Bar Start -->
+  <div id="headerID"></div>
+  <!-- Nav Bar End -->
+
+  <!-- start body content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-md-8 col-md-12">
+        <!-- Breadcrumb Start -->
+        <div class="breadcrumb-wrap">
+          <div class="container">
+            <ul class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item"><a href="Javahome.html">Java</a></li>
+              <li class="breadcrumb-item active">Lambda Expression</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Breadcrumb End -->
+        <article class="post" itemtype="http://schema.org/BlogPosting" style="height: auto !important">
+          <header class="post-header">
+            <h1 class="post-title" itemprop="name headline">
+              Lambda Expression
+            </h1>
+          </header>
+          <p class="post-content">
+            Before talking about lambda expressions let me discuss about
+            lambda.In out mathematic somewhere you may heared about lamda
+            calculas.Like this Lmabda calculas concept big change in the
+            mathematical word and it introduced in 1930.Because of lambda big
+            big problem are solved very easily and Because of benefit of
+            lambda calculas slowly programs also used this in programing
+            world.<br><br>Dont feel java is first language which used lambda
+            expression unfortunately java is last language which uses lambda
+            expressions i mean not last but recent language which uses lamda
+            expression.First time lambda expression are used in LISP
+            language.there are other languages are also used this like c, c++,
+            objectic c, c#, scala, ruby etc..and finally java also.
+          </p>
+          <br />
+          <h3>Benifits:</h3>
+          <ul>
+            <li>
+              To enable Functional programing in java. you can send the
+              procedure like an argument.
+            </li>
+            <li>To write more readable, maintnable,and clean code</li>
+            <li>
+              To use api very easily and efectively using lambda expression
+            </li>
+            <li>To enable Parallel processing also.</li>
+          </ul>
+          <h3 class="ex-head">
+            Example 1 : Lambda With Functional Interface
+          </h3>
+
+          <pre>
+<!--             <button class="btn" onclick="copyFirst()"><i class="fa fa-copy"></i></button>
+ --><div id="first">
+<span class="keyword">package</span> com.ram.java8.lambda;
+<span class="keyword">public class</span> Lambda_Functional_Interface {
+	
+	<span class="keyword">interface</span> Lem {
+		<span class="keyword">public int</span> operation(<span class="keyword">int</span> a,<span class="keyword">int</span> b);
+		
+	}
+
+	<span class="keyword">public static void</span> main(String[] args) {
+		Lem l=(a,b) ->{
+			<span class="keyword">return</span> a+b;
+			};
+		System.<span class="out">out</span>.println(l.operation(10, 20));
+    }
+
+}          
+</div>
+          </pre>
+
+          <pre><h3 class="output">Output : 30</h3></pre>
+          <hr>
+          <h3 class="ex-head">Example 2 : Lambda With List</h3>
+          <pre>
+<!--             <button class="btn"><i class="fa fa-copy"></i></button>
+ -->
+<span class="keyword">package</span> com.ram.java8.lambda;
+
+<span class="keyword">import</span> java.util.ArrayList;
+<span class="keyword">import</span> java.util.List;
+
+<span class="keyword">public class</span> Lambda_List {
+
+	<span class="keyword">public static void</span> main(String[] args) {
+		List&lt;String&gt; list=<span class="keyword">new</span> ArrayList &lt;String&gt;();
+		list.add("one");
+		list.add("two");
+		list.add("three");
+		
+		<span class="comment">//Conventional  way to iterate list</span>
+		System.<span class="out">out</span>.println("<span class="string">*** Conventional  way to iterate list ***</span>");
+		for (String item : list) {
+			System.out.println(item);
+		}
+		System.<span class="out">out</span>.println("<span class="string">*** lambda Expression to iterate list with return type ***</span>);
+               <span class="comment">// lambda Expression to iterate list with return type</span>
+        list.forEach((String item) -> System.<span class="out">out</span>.println(item));
+		
+		System.<span class="out">out</span>.println("<span class="string">*** lambda Expression to iterate list without return type ***</span>");
+		<span class="comment">// lambda Expression to iterate list with return type</span>
+		list.forEach(item -> System.<span class="out">out</span>.println(item));
+		
+		System.out.println("<span class="string">*** lambda Expression to iterate list with return type ***</span>");
+		<span class="comment">// lambda Expression to iterate list with method reference</span>
+        list.forEach(System.<span class="out">out</span>::println);
+
+	}
+
+}
+          </pre>
+
+
+          <pre>
+            <h3 class="output">Output :</h3>
+            *** Conventional  way to iterate list ***
+            one
+            two
+            three
+            *** lambda Expression to iterate list with return type ***
+            one
+            two
+            three
+            *** lambda Expression to iterate list without return type ***
+            one
+            two
+            three
+            *** lambda Expression to iterate list with return type ***
+            one
+            two
+            three
+         </pre>
+
+          </pre>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <!-- end body content -->
+
+  <!-- Footer Start -->
+  <div id="footerID"></div>
+
+  <!-- JavaScript Libraries -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/slick/slick.min.js"></script>
+
+  <!-- Template Javascript -->
+  <script src="js/main.js"></script>
+  <script src="js/copy.js"></script>
+  <script>
+    $("#headerID").load("header.html");
+
+    $("#footerID").load("footer.html");
+  </script>
+</body>
+
+</html>
